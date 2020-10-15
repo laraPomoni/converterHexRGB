@@ -1,4 +1,4 @@
-# A simple converter from RGB to Hexadecimal and vice versa
+# A simple converters from RGB to Hexadecimal and vice versa
 
 # Description
 
