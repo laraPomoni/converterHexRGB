@@ -1,22 +1,22 @@
 var express = require("express");
 var app = express();
-var converter = require("./converter");
+var checker = require("./checker");
 
-app.get("/rgbToHex", function(req, res) {
+app.get("/stringValidator", function(req, res) {
 
-  var red   = parseInt(req.query.red, 10);
-  var green = parseInt(req.query.green, 10);
-  var blue  = parseInt(req.query.blue, 10);
-  var hex = converter.rgbToHex(red, green, blue);
-  res.send(hex);
+  console.log("entra");
+
+  var string   = req.query.value;
+  var result = checker.stringValidator(string);
+  res.send(JSON.stringify(result));
 
 });
 
-app.get("/hexToRgb", function(req, res) {
+app.get("/numberValidator", function(req, res) {
 
-  var hex = req.query.hex;
-  var rgb = converter.hexToRgb(hex);
-  res.send(JSON.stringify(rgb));
+  var number   = req.query.value;
+  var result = checker.numberValidator(number);
+  res.send(JSON.stringify(number));
 
 });
 
