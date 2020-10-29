@@ -2,9 +2,7 @@ var express = require("express");
 var app = express();
 var checker = require("./checker");
 
-app.get("/stringValidator", function(req, res) {
-
-  console.log("entra");
+app.get("/streets", function(req, res) {
 
   var string   = req.query.value;
   var result = checker.stringValidator(string);
